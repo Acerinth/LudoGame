@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SbsSW.SwiPlCs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,15 @@ namespace Ludo
     public partial class FrmMain : Form
     {
         public static List<string> PlayerTypeList { get; private set; } = new List<string>();
+        public static string[] p = { "-q", "-f", @"F:\OneDrive\FOI\2. DS - BPBZ\1. semestar\LP\Projekt\LudoGame\Ludo\Ludo\covjece.pl" };
 
         public FrmMain()
         {
             InitializeComponent();
             InitializePlayerTypeList();
+            PlEngine.Initialize(p);
+            //PlQuery consult = new PlQuery("consult(covjece.pl)");
+            //consult.NextSolution();
         }
 
         private void InitializePlayerTypeList()

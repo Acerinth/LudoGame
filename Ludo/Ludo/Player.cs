@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Ludo
 {
-    class Player
+    public class Player
     {
         public static List<Player> PlayerList = new List<Player>();
 
-        public int Number { private set; get; }
+        public int ID { private set; get; }
         public string Nickname { private set; get; }
         public Color Color { private set; get; }
-        public string Type { private set; get; }
+        public int Type { private set; get; }
 
-        public Player(int n, string nick, Color c, string t)
+        public Player(int n, string nick, Color c, int t)
         {
-            this.Number = n;
+            this.ID = n;
             this.Nickname = nick;
             this.Color = c;
             this.Type = t;
