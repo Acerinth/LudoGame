@@ -62,13 +62,28 @@ namespace Ludo
             {
                 Player p = new Player(1, txtNick1.Text, Color.Red, cBox1.SelectedIndex);
                 Player.PlayerList.Add(p);
-                
-                bool jelValja = PlQuery.PlCall("spremi_igraca(1,'" + txtNick1.Text + "',red," + cBox1.SelectedIndex + ")");
-                
-                
+                PlQuery.PlCall("spremi_igraca(1,'" + txtNick1.Text + "',red," + cBox1.SelectedIndex + ")");
+            }
+            if (cBox2.SelectedIndex < 2)
+            {
+                Player p = new Player(2, txtNick2.Text, Color.Blue, cBox2.SelectedIndex);
+                Player.PlayerList.Add(p);
+                PlQuery.PlCall("spremi_igraca(2,'" + txtNick2.Text + "',blue," + cBox2.SelectedIndex + ")");
+            }
+            if (cBox3.SelectedIndex < 2)
+            {
+                Player p = new Player(3, txtNick3.Text, Color.Green, cBox3.SelectedIndex);
+                Player.PlayerList.Add(p);
+                PlQuery.PlCall("spremi_igraca(3,'" + txtNick3.Text + "',green," + cBox3.SelectedIndex + ")");
+            }
+            if (cBox4.SelectedIndex < 2)
+            {
+                Player p = new Player(4, txtNick4.Text, Color.Yellow, cBox4.SelectedIndex);
+                Player.PlayerList.Add(p);
+                PlQuery.PlCall("spremi_igraca(4,'" + txtNick4.Text + "',yellow," + cBox4.SelectedIndex + ")");
             }
 
-            // dodati kreiranje igrača prema specifikacijama korisnika
+            
             this.Close();
         }
 

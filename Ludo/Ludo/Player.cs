@@ -16,13 +16,28 @@ namespace Ludo
         public Color Color { private set; get; }
         public int Type { private set; get; }
 
+        public List<Token> TokenList = new List<Token>();
+
         public Player(int n, string nick, Color c, int t)
         {
             this.ID = n;
             this.Nickname = nick;
             this.Color = c;
             this.Type = t;
+            setTokens();
         }
+
+        private void setTokens()
+        {
+            for (int i=1; i<=4; i++)
+            {
+                Token t = new Token();
+                t.GenerateToken(i, this);
+                TokenList.Add(t);
+            }
+        }
+
+        
 
 
     }

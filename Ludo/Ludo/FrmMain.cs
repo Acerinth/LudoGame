@@ -36,6 +36,14 @@ namespace Ludo
         {
             FrmNewGame newGame = new FrmNewGame();
             newGame.ShowDialog();
+            foreach (Player p in Player.PlayerList)
+            {
+                foreach (Token t in p.TokenList)
+                {
+                    panelBoard.Controls.Add(t);
+                }
+            }
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,8 +53,6 @@ namespace Ludo
 
         private void panelBoard_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.FillRectangle(Brushes.SandyBrown, 0, 0, 650, 650);
-
             Pen p = new Pen(Color.Black);
             p.Width = 2;
 
