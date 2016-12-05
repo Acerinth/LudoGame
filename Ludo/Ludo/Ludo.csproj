@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmFirstPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFirstPlay.Designer.cs">
+      <DependentUpon>FrmFirstPlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Token.Designer.cs">
       <DependentUpon>Token.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmFirstPlay.resx">
+      <DependentUpon>FrmFirstPlay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SbsSW.SwiPlCs;
 
 namespace Ludo
 {
@@ -42,12 +43,14 @@ namespace Ludo
             this.Player = p;
             setHousesLocation(id, p.Color);
 
-            //azurirati bazu znanja --> postaviti tokene u kucice
+            PlQuery.PlCall("postavi_zeton_u_kucicu("+id+","+p.ID+").");
+            
         }
 
         private void setHousesLocation(int id, Color c)
         {
             Point startPoint = new Point();
+            int correction = 0;
             if (c == Color.Red)
             {
                 startPoint.X = 20;
@@ -57,20 +60,24 @@ namespace Ludo
             {
                 startPoint.X = 520;
                 startPoint.Y = 20;
+                correction = 4;
             }
             if (c == Color.Green)
             {
                 startPoint.X = 520;
                 startPoint.Y = 520;
+                correction = 8;
             }
             if (c == Color.Yellow)
             {
                 startPoint.X = 20;
                 startPoint.Y = 520;
+                correction = 12;
             }
 
             Point currentPoint = new Point();
-            switch (id)
+            int locationId = id - correction;
+            switch (locationId)
             {
                 case 1:
                     currentPoint = startPoint;

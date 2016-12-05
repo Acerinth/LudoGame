@@ -43,6 +43,10 @@ namespace Ludo
                     panelBoard.Controls.Add(t);
                 }
             }
+            FrmFirstPlay firstPlay = new FrmFirstPlay();
+            firstPlay.ShowDialog();
+
+            //begin game
 
         }
 

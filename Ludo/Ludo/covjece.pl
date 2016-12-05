@@ -73,45 +73,48 @@ ploca(38, path, white, 0).
 ploca(39, path, white, 0).
 ploca(40, exit, red, 0). %ulaz u crvenu kucicu
 
-ploca(1, fhouse, blue, 0).
-ploca(2, fhouse, blue, 0).
-ploca(3, fhouse, blue, 0).
-ploca(4, fhouse, blue, 0).
 
-ploca(1, fhouse, green, 0).
-ploca(2, fhouse, green, 0).
-ploca(3, fhouse, green, 0).
-ploca(4, fhouse, green, 0).
-
-ploca(1, fhouse, yellow, 0).
-ploca(2, fhouse, yellow, 0).
-ploca(3, fhouse, yellow, 0).
-ploca(4, fhouse, yellow, 0).
-
-ploca(1, fhouse, red, 0).
+ploca(1, fhouse, red, 0). %ciljne kucice
 ploca(2, fhouse, red, 0).
 ploca(3, fhouse, red, 0).
 ploca(4, fhouse, red, 0).
 
-ploca(1, shouse, blue, 0).
-ploca(2, shouse, blue, 0).
-ploca(3, shouse, blue, 0).
-ploca(4, shouse, blue, 0).
+ploca(5, fhouse, blue, 0).
+ploca(6, fhouse, blue, 0).
+ploca(7, fhouse, blue, 0).
+ploca(8, fhouse, blue, 0).
 
-ploca(1, shouse, green, 0).
-ploca(2, shouse, green, 0).
-ploca(3, shouse, green, 0).
-ploca(4, shouse, green, 0).
+ploca(9, fhouse, green, 0).
+ploca(10, fhouse, green, 0).
+ploca(11, fhouse, green, 0).
+ploca(12, fhouse, green, 0).
 
-ploca(1, shouse, yellow, 0).
-ploca(2, shouse, yellow, 0).
-ploca(3, shouse, yellow, 0).
-ploca(4, shouse, yellow, 0).
+ploca(13, fhouse, yellow, 0).
+ploca(14, fhouse, yellow, 0).
+ploca(15, fhouse, yellow, 0).
+ploca(16, fhouse, yellow, 0).
 
-ploca(1, shouse, red, 0).
+
+ploca(1, shouse, red, 0). %pocetne kucice
 ploca(2, shouse, red, 0).
 ploca(3, shouse, red, 0).
 ploca(4, shouse, red, 0).
+
+ploca(5, shouse, blue, 0).
+ploca(6, shouse, blue, 0).
+ploca(7, shouse, blue, 0).
+ploca(8, shouse, blue, 0).
+
+ploca(9, shouse, green, 0).
+ploca(10, shouse, green, 0).
+ploca(11, shouse, green, 0).
+ploca(12, shouse, green, 0).
+
+ploca(13, shouse, yellow, 0).
+ploca(14, shouse, yellow, 0).
+ploca(15, shouse, yellow, 0).
+ploca(16, shouse, yellow, 0).
+
 
 
 
@@ -162,18 +165,18 @@ zeton(1,1).  %prvi arg => broj zetona, drugi arg => ID igraca
 zeton(2,1).
 zeton(3,1).
 zeton(4,1).
-zeton(1,2).
-zeton(2,2).
-zeton(3,2).
-zeton(4,2).
-zeton(1,3).
-zeton(2,3).
-zeton(3,3).
-zeton(4,3).
-zeton(1,4).
-zeton(2,4).
-zeton(3,4).
-zeton(4,4).
+zeton(5,2).
+zeton(6,2).
+zeton(7,2).
+zeton(8,2).
+zeton(9,3).
+zeton(10,3).
+zeton(11,3).
+zeton(12,3).
+zeton(13,4).
+zeton(14,4).
+zeton(15,4).
+zeton(16,4).
 
 igrac(1, nick1, red, 2).
 igrac(2, nick2, blue, 2).
@@ -199,13 +202,13 @@ zeton(N,Igrac), ploca(_,start,_,N); zeton(N,Igrac), ploca(_,exit,_,N).
 
 iduci_igrac(Igrac) :- lista_igraca(Lista), Iduci is Igrac+1, (Iduci>4 -> Novi is 1, true; Novi is Iduci, true), (not(member(Novi,Lista)) -> iduci_igrac(Novi); retract(na_redu(_)), assert(na_redu(Novi))).
 
+postavi_zeton_u_kucicu(Zeton, Igrac) :- igrac(Igrac,_,Boja,_), retract(ploca(Zeton,shouse,Boja,_)), assert(ploca(Zeton,shouse,Boja,Zeton)).
 
 
 
 
 
 
-pomakni_zeton(Zeton) :- kocka(N), ploca(Mjesto, Zeton), X is Mjesto+N, retract(ploca(Mjesto,_)), assert(ploca(X,Zeton)).
 
 
 

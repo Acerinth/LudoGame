@@ -29,12 +29,38 @@ namespace Ludo
 
         private void setTokens()
         {
-            for (int i=1; i<=4; i++)
+            int n = getFirstTokenId();
+            if (n > 0)
             {
-                Token t = new Token();
-                t.GenerateToken(i, this);
-                TokenList.Add(t);
+                for (int i = n; i < n+4; i++)
+                {
+                    Token t = new Token();
+                    t.GenerateToken(i, this);
+                    TokenList.Add(t);
+                }
             }
+            
+        }
+
+        private int getFirstTokenId()
+        {
+            if (Color == Color.Red)
+            {
+                return 1;
+            }
+            if (Color == Color.Blue)
+            {
+                return 5;
+            }
+            if (Color == Color.Green)
+            {
+                return 9;
+            }
+            if (Color == Color.Yellow)
+            {
+                return 13;
+            }
+            return -1;
         }
 
         
