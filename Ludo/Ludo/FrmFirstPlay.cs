@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SbsSW.SwiPlCs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,12 +45,12 @@ namespace Ludo
             if (rBPlayer.Checked == true)
             {
                 int chosenPlayer = (int)cBoxPlayers.SelectedValue;
-                //upisat u prolog ko je na redu
+                PlQuery.PlCall("retract(na_redu(_)), assert(na_redu("+ chosenPlayer +")).");
 
             }
             else if (rBRandom.Checked == true)
             {
-                //pozvat funkciju iz prologa
+                PlQuery.PlCall("tko_pocinje().");
             }
             this.Close();
         }

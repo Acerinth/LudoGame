@@ -24,6 +24,7 @@ namespace Ludo
             {
                 PlEngine.Initialize(FrmMain.p);
             }
+            //pocistit plocu
         }
 
         private void CreateBoxes()
@@ -82,7 +83,6 @@ namespace Ludo
                 Player.PlayerList.Add(p);
                 PlQuery.PlCall("spremi_igraca(4,'" + txtNick4.Text + "',yellow," + cBox4.SelectedIndex + ")");
             }
-
             
             this.Close();
         }

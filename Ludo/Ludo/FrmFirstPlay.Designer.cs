@@ -62,9 +62,9 @@
             this.rBRandom.AutoSize = true;
             this.rBRandom.Location = new System.Drawing.Point(140, 146);
             this.rBRandom.Name = "rBRandom";
-            this.rBRandom.Size = new System.Drawing.Size(148, 17);
+            this.rBRandom.Size = new System.Drawing.Size(164, 17);
             this.rBRandom.TabIndex = 2;
-            this.rBRandom.Text = "Let CPU choose randomly";
+            this.rBRandom.Text = "Let CPU simulate rolling dices";
             this.rBRandom.UseVisualStyleBackColor = true;
             this.rBRandom.CheckedChanged += new System.EventHandler(this.rBRandom_CheckedChanged);
             // 

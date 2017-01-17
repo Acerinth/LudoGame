@@ -15,6 +15,8 @@ namespace Ludo
         public string Nickname { private set; get; }
         public Color Color { private set; get; }
         public int Type { private set; get; }
+        public int NumberRolledDice { set; get; }
+        public int DiceNumber { set; get; }
 
         public List<Token> TokenList = new List<Token>();
 
@@ -62,9 +64,6 @@ namespace Ludo
             }
             return -1;
         }
-
-        
-
 
     }
 }

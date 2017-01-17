@@ -40,6 +40,8 @@
             this.Size = new System.Drawing.Size(50, 50);
             this.Load += new System.EventHandler(this.Token_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Token_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Token_MouseClick);
+            this.MouseHover += new System.EventHandler(this.Token_MouseHover);
             this.ResumeLayout(false);
 
         }

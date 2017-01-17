@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardField.cs" />
     <Compile Include="FrmFirstPlay.cs">
       <SubType>Form</SubType>
     </Compile>
